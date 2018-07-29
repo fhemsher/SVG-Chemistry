@@ -87,7 +87,7 @@ onmousedown="return false;"
 <div id=addElemMoleculeFrameDiv style='padding:10px;border-radius:10px;position:fixed;visibility:hidden;width:1px;height:1px;overflow:hidden'><iframe id=addElemMoleculeFrame style='border-width:0px;height:1px;overflow:hidden;'   scrolling='no' frameborder='0'   ></iframe></div>
 	<script charset="UTF-8" type="text/javascript" src="AddElem/Molecule/drawMolecule.js"></script>
     <script charset="UTF-8" type="text/javascript" src="js03_drag/dragObjMolecule.js"></script>
-<!--<div id=addElemTessellateFrameDiv style='padding:10px;border-radius:10px;position:fixed;visibility:hidden;width:1px;height:1px;overflow:hidden'><iframe id=addElemTessellateFrame src=AddElem/addElemTessellate.htm style='border-width:0px;height:1px;overflow:hidden;'   scrolling='no' frameborder='0'   ></iframe></div>
+<div id=addElemTessellateFrameDiv style='padding:10px;border-radius:10px;position:fixed;visibility:hidden;width:1px;height:1px;overflow:hidden'><iframe id=addElemTessellateFrame src=AddElem/addElemTessellate.htm style='border-width:0px;height:1px;overflow:hidden;'   scrolling='no' frameborder='0'   ></iframe></div>
 	<script charset="UTF-8" type="text/javascript" src="AddElem/Tessellate/pallet.js"></script>
 	<script charset="UTF-8" type="text/javascript" src="AddElem/Tessellate/rotate.js"></script>
 	<script charset="UTF-8" type="text/javascript" src="AddElem/Tessellate/rowColumn.js"></script>
@@ -96,7 +96,7 @@ onmousedown="return false;"
 	<script charset="UTF-8" type="text/javascript" src="AddElem/Tessellate/tessellateUtils.js"></script>
 	<script charset="UTF-8" type="text/javascript" src="AddElem/Tessellate/trimBox.js"></script>
 	<script charset="UTF-8" type="text/javascript" src="AddElem/Tessellate/drawTessellate.js"></script>
-    <script charset="UTF-8" type="text/javascript" src="js03_drag/dragObjTessellate.js"></script>-->
+    <script charset="UTF-8" type="text/javascript" src="js03_drag/dragObjTessellate.js"></script>
 <div id=addElemTextFrameDiv style='padding:10px;border-radius:10px;position:fixed;visibility:hidden;width:1px;height:1px;overflow:hidden'><iframe id=addElemTextFrame style='border-width:0px;height:1px;overflow:hidden;'   scrolling='no' frameborder='0'   ></iframe></div>
     <script charset="UTF-8" type="text/javascript" src="AddElem/Text/drawText.js"></script>
     <script charset="UTF-8" type="text/javascript" src="js03_drag/dragObjText.js"></script>
@@ -421,7 +421,7 @@ You may adjust the size of the chart via the Scale slider.
 &nbsp; &nbsp; &nbsp; <button onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=getComponentLibraryButton  style=background-color:#C3E6D3 onClick=getComponentLibrary()>Chemical Components</button><img id=openComponentButton onClick=openComponentHelp() align=center src="Images/help.png"  width=20 height=20  alt="SVG SCADA Control Components" />
 &nbsp; &nbsp; &nbsp; <button onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=getSchematicLibraryButton  style=background-color:#E0CAEA onClick=getSchematicLibrary()>Chemical Schematics</button><img id=openSchematicButton onClick=openSchematicHelp() align=center src="Images/help.png"  width=20 height=20  alt="SVG Chemical Schematics" />
  &nbsp; &nbsp; &nbsp; <button onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddMoleculeButton   onClick=previewMolecules() title="Preview SMILES Molecules">Create Molecules</button><img  onClick=openMoleculeHelp() align=center src="Images/help.png"  width=20 height=20  alt="SVG Chemical Molecules" />
-&nbsp; &nbsp; &nbsp; <button onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddTessellateButton   style=background-color:#f0e6ac;display:none   onClick=previewTessellate() title="Preview Structural Tessellate">Structural Tessellations</button><img style=display:none  onClick=openTessellateHelp() align=center src="Images/help.png"  width=20 height=20  alt="SVG Chemical Tessellations" />
+&nbsp; &nbsp; &nbsp; <button onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddTessellateButton   style=background-color:#f0e6ac   onClick=previewTessellate() title="Preview Structural Tessellate">Structural Tessellations</button><img style=display:none  onClick=openTessellateHelp() align=center src="Images/help.png"  width=20 height=20  alt="SVG Chemical Tessellations" />
  &nbsp; <button onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddGraphButton  style=background-color:#0000cd;color:white onClick=openAddGraphDraw()>Graphs</button><img id=openGraphHelpButton onClick=openGraphHelp() align=center src="Images/help.png"  width=20 height=20  alt="Graphs" />
 &nbsp; <button onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddChartButton  style=background-color:#3cb371;color:white onClick=openAddChartDraw()>Charts</button><img id=openChartHelpButton onClick=openChartHelp() align=center src="Images/help.png"  width=20 height=20  alt="Charts" />
 
@@ -589,7 +589,7 @@ Remove Your Schematic(s) from Library:
 </div>
 
 <div id=previewMoleculeFrameDiv style='border:2px solid black;top:0px;left:30px;padding:0px;border-radius:10px;position:absolute;visibility:hidden;width:1px;height:1px;overflow:hidden'><iframe id=previewMoleculeFrame style='border-width:0px;height:1px;overflow:hidden;'   scrolling='no' frameborder='0'   ></iframe></div>
-<div id=previewTessellateFrameDiv style='top:0px;left:30px;padding:0px;position:absolute;visibility:hidden;width:480px;height:660px;'><iframe id=previewTessellateFrame style='width:480px;height:660px'   scrolling='yes' frameborder='0'   ></iframe></div>
+<div id=previewTessellateFrameDiv style='top:0px;left:0px;padding:0px;position:absolute;visibility:hidden;width:480px;height:660px;'><iframe id=previewTessellateFrame style='width:480px;height:660px'   scrolling='yes' frameborder='0'   ></iframe></div>
 
 
 </body>
@@ -621,7 +621,7 @@ function init()
 
     d3.select("#textSVG").transition().duration(5000).attr("opacity",0)
     setTimeout('mySVG.removeChild(textSVG)',5000)
-    //previewTessellateFrame.src = "AddElem/Tessellate/SVGTile/previewTessellateFrame.htm"
+    previewTessellateFrame.src = "AddElem/Tessellate/SVGTile/previewTessellateFrame.htm"
 }
 function setSVGSizeButtonClicked()
 {
