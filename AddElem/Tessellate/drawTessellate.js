@@ -1134,6 +1134,9 @@ function ctmScreenPolygon(myPoly)
 
 //---key Tiles & Key Points---
 //["0_0",7,"1_0",2,"0_0",5,"0_1",0]
+var transStar_Hex2_sq=[]
+transStar_Hex2_sq[0]=["0_0",4,"0_1",11]
+transStar_Hex2_sq[1]=["0_0",8,"1_0",1]
 
 var transHex2_rh2_60=[]
 transHex2_rh2_60[0]=["0_0",7,"0_1",2]
