@@ -9,8 +9,8 @@
 <style type="text/css">
 .imgTu {
     display: block;
-    max-width:200px;
-    max-height:200px;
+    max-width:160px;
+    max-height:160px;
     width: auto;
     height: auto;
     vertical-align: middle;
@@ -18,16 +18,16 @@
 </style>
 </head>
 
-<body style='font-family:arial;background:#a7fc00' onLoad=buildTileTable()>
-    <center><b>Tile Tessellations</b></center>
-<table style=position:absolute;top:40px;left:0px;background:#a7fc00;border-collapse:collapse id=tileTable border=3>
+<body style='font-family:arial;background:#f0e6ac' onLoad=buildTileTable()>
+    <center><b>Structural Tessellations</b></center>
+<table style=width:360px;position:absolute;top:40px;left:0px;background:#f0e6ac;border-collapse:collapse id=tileTable border=3>
 <tr><td align=center colspan=3>Click on Tile Unit to load it</td></tr>
 
 <tr><td></td><td align=center>Tile Unit</td><td align=center>Tessellation</td></tr>
 
 
 </table>
-<button onClick=parent.closeTessellatePreview() style='position:fixed;top:20px;left:90%'>X</button>
+<button onmouseover=this.style.background="red"  onmouseout=this.style.background=""  onClick=parent.closeTessellatePreview() style='position:fixed;top:20px;left:93%'>X</button>
 </body>
 <script>
 var Code
@@ -96,9 +96,9 @@ function buildTileTable()
                svgCell.align="center"
 
 
-               svgCell.innerHTML='<img style="cursor:pointer" title="Load this tesselation structural unit" onClick=getTile("'+ref[1]+'");this.style.borderWidth="3px";this.style.borderColor="violet";this.style.borderStyle="solid" class=imgTu src="'+svgFile+'" width=200 height=200 />'
+               svgCell.innerHTML='<img style="cursor:pointer" title="Load this tesselation structural unit" onClick=getTile("'+ref[1]+'");this.style.borderWidth="3px";this.style.borderColor="violet";this.style.borderStyle="solid" class=imgTu src="'+svgFile+'" width=160 height=160 />'
 
-                               var imgCell=row.insertCell(2).innerHTML="<img title='"+ref[0]+" "+ref[0]+"'  width=200 height=200 src="+galleryFile+" />"
+                               var imgCell=row.insertCell(2).innerHTML="<img title='"+ref[0]+" "+ref[0]+"'  width=160 height=160 src="+galleryFile+" />"
 
 
 
