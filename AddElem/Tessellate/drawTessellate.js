@@ -37,8 +37,10 @@ function openAddTessellateDraw()
 
    }
        openIframe("AddElem", "addElemTessellate", 0)
-
+      var cw = addElemTessellateCw
+      cw.startClickSpan.style.visibility="visible"
 }
+
 
 
 function closeDrawTessellate()
@@ -134,6 +136,7 @@ function closeDrawTessellate()
 
         cw.containerDiv.style.backgroundColor = "#f0e6ac"
 
+      cw.startClickSpan.style.visibility="visible"
 
     }
 }
@@ -281,7 +284,7 @@ function tessellate()
     var cw = addElemTessellateCw
     cw.drawTessellateFinishButton.disabled = false
     cw.drawTessellateCancelButton.disabled = false
-
+    cw.startClickSpan.style.visibility="hidden"
     if(!ActiveElem)
     {
         domActiveElemG.setAttribute("transform","translate("+SVGx+","+SVGy+")")
@@ -794,7 +797,7 @@ function setEditTessellate()
     var cw = addElemTessellateCw
     cw.trChange1.style.visibility="visible"
     cw.trChange2.style.visibility="visible"
-
+    cw.startClickSpan.style.visibility="hidden"
     var elemObjEdit = document.getElementById(DrawTessellateEditId)
         console.log(elemObjEdit)
 
