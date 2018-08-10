@@ -1,6 +1,6 @@
 # SVG-Chemistry
 Windows 10 Stand-Alone Application: Create SVG Chemistry Drawings
-
+![ASP Selection at IIS](http://svg-chemistry.com/ASPImages/IIS-ASP-icon.png)
 **Dowload ZIP** folder, then create a new site under inetpub/wwwroot on your computer.
 
 Place unzipped files into that site's folder.
