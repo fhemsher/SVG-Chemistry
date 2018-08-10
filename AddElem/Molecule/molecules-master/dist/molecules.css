@@ -17,99 +17,68 @@
   stroke: #000;
   stroke-width: 3px;
 }
-
 .atom-H {
-    fill: lime;
-    stroke: #B4B4B4;
-    stroke-width: 2px;
+    fill: url(#atomH);
+    stroke: none;
 }
-
 .atom-He {
-    fill: #37A1E7;
-    stroke: #3295D5;
-    stroke-width: 1px;
+    fill: url(#atomHe);
+    stroke: none;
 }
-
 .atom-B {
-    fill: #CDB966;
-    stroke: #BCAB5E;
-    stroke-width: 1px;
+    fill: url(#atomB);
+    stroke: none;
 }
-
 .atom-C {
-    fill: #242729;
-    stroke: #24282A;
-    stroke-width: 1px;
+    fill: url(#atomC);
+    stroke: none;
 }
-
 .atom-N {
-    fill: #4255E9;
-    stroke: #3444C5;
-    stroke-width: 1px;
+    fill: url(#atomN);
+    stroke: none;
 }
-
 .atom-O {
-    fill: #EB3941;
-    stroke: #C12D36;
-    stroke-width: 1px;
+    fill: url(#atomO);
+    stroke: none;
 }
-
 .atom-F {
-    fill: #AC49E3;
-    stroke: #9D42D0;
-    stroke-width: 1px;
+    fill: url(#atomF);
+    stroke: none;
 }
-
 .atom-Na {
-    fill: #da7006;
-    stroke: #A66CE0;
-    stroke-width: 1px;
+    fill: url(#atomNa);
+    stroke: none;
 }
-
 .atom-Si {
-    fill: #959595;
-    stroke: #7C7C7C;
-    stroke-width: 1px;
+    fill: url(#atomSi);
+    stroke: none;
 }
-
 .atom-P {
-    fill: #00AE78;
-    stroke: #009D6D;
-    stroke-width: 1px;
+    fill: url(#atomP);
+    stroke: none;
 }
 
 .atom-S {
-    fill: gold;
-    stroke: #F3D379;
-    stroke-width: 1px;
+    fill: url(#atomS);
+    stroke: none;
 }
-
 .atom-Cl {
-    fill: yellow;
-    stroke: khaki;
-    stroke-width: 1px;
+    fill: url(#atomCl);
+    stroke: none;
 }
-
 .atom-As {
-    fill: #827340;
-    stroke: #726437;
-    stroke-width: 1px;
+    fill: url(#atomAs);
+    stroke: none;
 }
-
 .atom-Se {
-    fill: #B40409;
-    stroke: #A2030C;
-    stroke-width: 1px;
+    fill: url(#atomSe);
+    stroke: none;
 }
-
 .atom-Br {
-    fill: #F08F27;
-    stroke: #DB8226;
-    stroke-width: 1px;
+    fill: url(#atomBr);
+    stroke: none;
 }
-
 .atom-I {
-    fill: #40d0e0;
-    stroke: #274496;
-    stroke-width: 1px;
+    fill: url(#atomI);
+    stroke: none;
 }

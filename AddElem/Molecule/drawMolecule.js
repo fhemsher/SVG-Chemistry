@@ -119,7 +119,7 @@ function startMoleculeDraw()
           cw.chemicalNameSpan.innerHTML=ChemicalName
     cw.smilesValue.value=SMILES
          cw.molecularFormulaSpan.innerHTML=MolecularFormula
-
+        cw.clickDiv.style.visibility="visible"
     }
 
 
@@ -151,7 +151,7 @@ var MoleculeVB
 function placeDrawMolecule()
 {
     var cw = addElemMoleculeCw
-
+      cw.clickDiv.style.visibility="hidden"
             coverOn()
 
             var opacity = cw.drawMoleculeOpacitySelect.options[cw.drawMoleculeOpacitySelect.selectedIndex].text
@@ -166,22 +166,46 @@ function placeDrawMolecule()
                     var elem=PreviewMoleculeDoc.childNodes.item(k)//.cloneNode(true)
                     if(elem.nodeName=="line")
                     {
-                    ActiveElem.append(elem.nodeName)
-                    .attr("class", elem.getAttribute("class"))
-                    .attr("x1", elem.getAttribute("x1"))
-                    .attr("y1", elem.getAttribute("y1"))
-                    .attr("x2", elem.getAttribute("x2"))
-                    .attr("y2", elem.getAttribute("y2"))
-                    .attr("style", elem.getAttribute("style"))
+                        var line=ActiveElem.append(elem.nodeName)
+                        .attr("class", elem.getAttribute("class"))
+                        .attr("x1", elem.getAttribute("x1"))
+                        .attr("y1", elem.getAttribute("y1"))
+                        .attr("x2", elem.getAttribute("x2"))
+                        .attr("y2", elem.getAttribute("y2"))
+                        .attr("style", elem.getAttribute("style"))
+
+                         if(elem.getAttribute("class") =="link")
+                         {
+                            line.attr("stroke","#696969")
+                            line.attr("fill","none")
+                            line.attr("stroke-width","3px")
+
+
+                         }
+                          if(elem.getAttribute("class") =="separator")
+                         {
+                            line.attr("stroke","#fff")
+                            line.attr("fill","#fff")
+                            line.attr("stroke-width","2px")
+
+
+                         }
+
 
                     }
                      if(elem.nodeName=="circle")
                     {
-                    ActiveElem.append(elem.nodeName)
+                    var atom=ActiveElem.append(elem.nodeName)
                     .attr("class", elem.getAttribute("class"))
                     .attr("r", elem.getAttribute("r"))
+                    .attr("stroke", "none")
                     .attr("cx", elem.getAttribute("cx"))
                     .attr("cy", elem.getAttribute("cy"))
+
+                    var fill=elem.getAttribute("class").replace(/-/,"")
+
+                   atom.attr("fill","url(#"+fill+")")
+
 
                     }
         }
@@ -317,7 +341,7 @@ function finishDrawMolecule()
             finishedElem.setAttribute("id", id)
             finishedElem.setAttribute("chemical", ChemicalName)
             finishedElem.setAttribute("smiles", SMILES)
-            finishedElem.setAttribute("formula", MolecularFormula)
+           // finishedElem.setAttribute("formula", MolecularFormula)
               finishedElem.lastChild.setAttribute("onmousedown", "editMoleculeDraw("+id+",evt)")
              finishedElem.lastChild.removeAttribute("cursor")
             finishedElem.setAttribute("class", "moleculeElem")
@@ -440,6 +464,7 @@ function setEditMolecule()
 
     mySVG.removeAttribute('onclick')
     var cw = addElemMoleculeCw
+     cw.clickDiv.style.visibility="hidden" 
     var elemObjEdit = document.getElementById(DrawMoleculeEditId)
 
     EditMoleculeObj = elemObjEdit.cloneNode(true)
@@ -607,7 +632,7 @@ function topDrawMolecule()
 
     var elemObjEdit = document.getElementById(DrawMoleculeEditId)
     var finishedElem = document.getElementById("activeElem").cloneNode(true)
-    finishedElem.setAttribute("class", "circleElem")
+    finishedElem.setAttribute("class", "moleculeElem")
     finishedElem.removeAttribute("style")
     finishedElem.style.cursor = "default"
     finishedElem.setAttribute("id", DrawMoleculeEditId)
@@ -625,7 +650,7 @@ function botDrawMolecule()
     {
         var elemObjEdit = document.getElementById(DrawMoleculeEditId)
         var finishedElem = document.getElementById("activeElem").cloneNode(true)
-        finishedElem.setAttribute("class", "circleElem")
+        finishedElem.setAttribute("class", "moleculeElem")
         finishedElem.removeAttribute("style")
         finishedElem.style.cursor = "default"
         finishedElem.setAttribute("id", DrawMoleculeEditId)
