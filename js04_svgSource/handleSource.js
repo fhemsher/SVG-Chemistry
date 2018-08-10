@@ -100,8 +100,7 @@ function clearButtonClicked()
 	inputFileNameToSaveAs.value=""
 	inputFileNameToSaveAs.placeholder="Include your fileName.svg"
 
-	
-	//showSourceSVG()
+   
 	showSaveSVG()
 	enableAllButtons()
 }
@@ -118,6 +117,7 @@ function publishSVG()
     publishSVG.removeAttribute("onmouseup")
     publishSVG.removeAttribute("onmousemove")
     publishSVG.removeAttribute("onclick")
+
     for(var k = publishSVG.childNodes.length-1; k>=0; k--)
     {
         var elem = publishSVG.childNodes.item(k)
@@ -180,6 +180,7 @@ function publishSVG()
         }
     }
     var sheet = document.createElement('style')
+    sheet.setAttribute("type","text/css")
     publishSVG.insertBefore(sheet,publishSVG.firstChild)
     var defs = document.createElement('defs')
     publishSVG.insertBefore(defs,publishSVG.childNodes.item(1))
@@ -209,10 +210,11 @@ function publishSVG()
         publishSVG.appendChild(pipe3dDefs.cloneNode(true))
     if(svgString.indexOf("url(#textBg)")!=-1)
         publishSVG.appendChild(textBgDefs.cloneNode(true))
+    if(svgString.indexOf("atom")!=-1)
+        publishSVG.appendChild(atomDefs.cloneNode(true))
 
-
-    var svgString = new XMLSerializer().serializeToString(publishSVG)
-    publishSVGValue.value=svgString
+        var svgString = new XMLSerializer().serializeToString(publishSVG)
+        publishSVGValue.value=svgString
 
 
     openPublishSVG()
