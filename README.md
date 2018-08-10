@@ -1,7 +1,7 @@
 # SVG-Chemistry
 Windows 10 Stand-Alone Application: Create SVG Chemistry Drawings
 
-!(http://svg-chemistry.com/Images/moleculeShadow.svg)
+![](http://svg-chemistry.com/Images/moleculeShadow.svg)
 
 **Dowload ZIP** folder, then create a new site under inetpub/wwwroot on your computer.
 
