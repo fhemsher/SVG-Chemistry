@@ -17,7 +17,6 @@ function placeDrawBGimage()
     .attr("id", "activeElem")
     .attr("class", "dragTargetObj")
     .attr("pointer-events", null)
-   // .attr("transform", "translate("+SVGx+" "+SVGy+")")
 
     ActiveBGimage = ActiveElem.append("image")
     .attr("id", "activeBGimage")
@@ -241,7 +240,6 @@ function finishDrawBGimage()
 
             finishedElem.style.cursor = "default"
 
-         //   finishedElem.setAttribute("onmousedown", "editBGimageDraw("+BGimageID+",evt)")
 
             DrawX.style("display", "none")
             ImgDragArrow.style("visibility", "hidden")
