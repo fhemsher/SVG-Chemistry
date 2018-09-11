@@ -20,7 +20,7 @@ function startCursorLoc()
                 if(DrawPath==true||DrawPathStart==true)trackDrawPath()
                 if(DrawPathEdit==true)trackDrawPathEdit()
                 if(addElemPgonViz==true)trackDrawPgon()
-
+                 if(addElemBGimageViz==true)trackDrawBGimage()
                 if(addElemIconViz==true)trackDrawIcon()
                 if(addElemPolygonViz==true)trackDrawPolygon()
                 if(addElemComponentViz==true)trackDrawComponent()
@@ -31,7 +31,7 @@ function startCursorLoc()
                 if(addElemGraphViz==true)trackDrawGraph()
                 if(addElemChartViz==true)trackDrawChart()
                if(ZoomDrawing==true)trackZoom()
-               if(TrimBox==true)trackDrawTrimBox()
+              if(TrimBox==true)trackDrawTrimBox()
 
         }
     );
