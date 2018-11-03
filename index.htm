@@ -111,9 +111,9 @@ onmousedown="return false;"
 	<script charset="UTF-8" type="text/javascript" src="AddElem/Path/drawPathEditButton.js"></script>
 	<script charset="UTF-8" type="text/javascript" src="js03_drag/dragPathPointEdit.js"></script>
 	<script charset="UTF-8" type="text/javascript" src="js03_drag/dragPathEdit.js"></script>
-<div id=addElemPgonFrameDiv style='padding:10px;border-radius:10px;position:fixed;visibility:hidden;width:1px;height:1px;overflow:hidden'><iframe id=addElemPgonFrame style='border-width:0px;height:1px;overflow:hidden;'   scrolling='no' frameborder='0'   ></iframe></div>
-	<script charset="UTF-8" type="text/javascript" src="AddElem/Pgon/drawPgon.js"></script>
-	<script charset="UTF-8" type="text/javascript" src="js03_drag/dragObjPgon.js"></script>
+<div id=addElemSymbolFrameDiv style='padding:10px;border-radius:10px;position:fixed;visibility:hidden;width:1px;height:1px;overflow:hidden'><iframe id=addElemSymbolFrame style='border-width:0px;height:1px;overflow:hidden;'   scrolling='no' frameborder='0'   ></iframe></div>
+	<script charset="UTF-8" type="text/javascript" src="AddElem/Symbol/drawSymbol.js"></script>
+	<script charset="UTF-8" type="text/javascript" src="js03_drag/dragObjSymbol.js"></script>
 
 <div id=addElemTextureFrameDiv style='padding:10px;border-radius:10px;position:fixed;visibility:hidden;width:1px;height:1px;overflow:hidden'><iframe id=addElemTextureFrame style='border-width:0px;height:1px;overflow:hidden;'   scrolling='no' frameborder='0'   ></iframe></div>
 	<script charset="UTF-8" type="text/javascript" src="AddElem/Texture/drawTexture.js"></script>
@@ -229,7 +229,7 @@ stroke-width: 0;
 
 
 <p></p>
-<div style='width:100%;text-align:right' >Download SVG-Chemistry .zip file <a href="javascript:downloadSite()" >SVG-Chemistry.com Files</a></div>
+ <div style='width:100%;text-align:right' >Download SVG-Chemistry .zip file <a href="https://github.com/fhemsher/SVG-Chemistry"  target="_blank">SVG-Chemistry.com Files</a></div>
 
 <div id=emDiv style='width:100%;text-align:right' ></div><p></p>
 
@@ -322,10 +322,11 @@ You may adjust the size of the chart via the Scale slider.
             <button onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddPathButton  style=background-color:linen onClick=openAddPathDraw()>Paths</button>
             <button onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddArcButton  style=background-color:linen onClick=openAddArcDraw()>Arcs</button>
             <button onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddPolygonButton  style=background-color:linen onClick=openAddPolygonDraw()>Polygons</button>
-            <button onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddPgonButton  style=background-color:linen onClick=openAddPgonDraw()>Symbols</button>
             <button onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddIconButton  style=background-color:linen onClick=openAddIconDraw()>Icons</button>
             <button onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddImageButton title="Add image from your computer" style=background-color:linen onClick=openAddImageDraw()>Images</button>
-             &nbsp;&nbsp;<button title="Add pattern/texture fill to elements" onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddTextureButton  style=background-color:linen onClick=openAddTexture()><i>Textures</i></button>
+                         <button onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddSymbolButton  style=background-color:#538BBA;color:white onClick=openAddSymbolDraw()>Symbols</button>
+
+            &nbsp;&nbsp;<button title="Add pattern/texture fill to elements" onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddTextureButton  style=background-color:linen onClick=openAddTexture()><i>Textures</i></button>
             <button title="Add Gradients" onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddGradientButton  style=background-color:linen onClick=openAddGradient()><i>Gradients</i></button>
              &nbsp;&nbsp;
             <button title="Create a component" onmouseover=this.style.borderColor="lime" onmouseout=this.style.borderColor=''  id=openAddComponentButton   style=background-color:#C3E6D3 onClick=openAddComponentDraw();startComponentDraw()   ><i>Components</i></button>
@@ -478,7 +479,109 @@ Remove Your Schematic(s) from Library:
 
 <div id=previewMoleculeFrameDiv style='border:2px solid black;top:0px;left:30px;padding:0px;border-radius:10px;position:absolute;visibility:hidden;width:1px;height:1px;overflow:hidden'><iframe id=previewMoleculeFrame style='border-width:0px;height:1px;overflow:hidden;'   scrolling='no' frameborder='0'   ></iframe></div>
 <div id=previewTessellateFrameDiv style='top:20px;left:0px;padding:0px;position:absolute;visibility:hidden;width:400px;height:660px;'><iframe id=previewTessellateFrame style='width:400px;height:660px'   scrolling='yes' frameborder='0'   ></iframe></div>
+<div style=visibility:hidden;overflow:hidden;width:1px;height:1px>
+<svg>
+<defs id=atomDefs>
+<radialGradient id="atomH" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#00FF48"/>
+<stop offset="100%" style="stop-color:#11BE42"/>
+</radialGradient>
+<radialGradient id="atomN" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#0000AA"/>
+<stop offset="100%" style="stop-color:#000077"/>
+</radialGradient>
+<radialGradient id="atomHe" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#37A1E7"/>
+<stop offset="100%" style="stop-color:#378BC7"/>
+</radialGradient>
+<radialGradient id="atomB" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#CDB966"/>
+<stop offset="100%" style="stop-color:#BCAB5E"/>
+</radialGradient>
+<radialGradient id="atomC" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#242729"/>
+<stop offset="100%" style="stop-color:#24282A"/>
+</radialGradient>
+<radialGradient id="atomO" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#EB3941"/>
+<stop offset="100%" style="stop-color:#C12D36"/>
+</radialGradient>
+<radialGradient id="atomF" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#AC49E3"/>
+<stop offset="100%" style="stop-color:#9D42D0"/>
+</radialGradient>
+<radialGradient id="atomNa" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#FF00AA"/>
+<stop offset="100%" style="stop-color:#C30082"/>
+</radialGradient>
+<radialGradient id="atomSi" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#959595"/>
+<stop offset="100%" style="stop-color:#7C7C7C"/>
+</radialGradient>
+<radialGradient id="atomP" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#00AE78"/>
+<stop offset="100%" style="stop-color:#009D6D"/>
+</radialGradient>
+<radialGradient id="atomS" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#D7A100"/>
+<stop offset="100%" style="stop-color:#9B7400"/>
+</radialGradient>
+<radialGradient id="atomCl" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#0C940C"/>
+<stop offset="100%" style="stop-color:#056105"/>
+</radialGradient>
+<radialGradient id="atomAs" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#827340"/>
+<stop offset="100%" style="stop-color:#726437"/>
+</radialGradient>
+<radialGradient id="atomSe" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#CA0A14"/>
+<stop offset="100%" style="stop-color:#A2030C"/>
+</radialGradient>
+<radialGradient id="atomBr" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#F08F27"/>
+<stop offset="100%" style="stop-color:#DB8226"/>
+</radialGradient>
+<radialGradient id="atomI" gradientUnits="objectBoundingBox"
+fx="30%" fy="30%">
+<stop offset="0%"   style="stop-color:#FFFFFF"/>
+<stop offset="40%"  style="stop-color:#7C90C7"/>
+<stop offset="100%" style="stop-color:#60719E"/>
+</radialGradient>
+</defs></svg>
 
+
+</div>
 
 </body>
 <script>
@@ -574,24 +677,10 @@ function writeEM()
     em+="gm"
     em+="ail."
     em+="com"
-   emDiv.innerHTML=em +" &nbsp;&nbsp;<span style=color:maroon>Last Update: 8/10/2018</span>"
+   emDiv.innerHTML=em +" &nbsp;&nbsp;<span style=color:maroon>Last Update: 11/03/2018</span>"
 
 }
 
-function downloadSite()
-{
-
-var zip_file_path = "SiteZip/SVG-Chemistry.zip"
-var zip_file_name = "SVG-ChemistrySite"
-var a = document.createElement("a");
-document.body.appendChild(a);
-a.style = "display: none";
-a.href = zip_file_path;
-a.download = zip_file_name;
-a.click();
-document.body.removeChild(a);
-
-}
 
 </script>
 
