@@ -370,13 +370,9 @@ function insertExistingSVG()
                                 if(myClass=="moleculeElem")el.setAttribute("onmousedown","editMoleculeDraw("+id+",evt)")
                                 if(myClass=="tessellateElem")el.setAttribute("onmousedown","editTessellateDraw("+id+",evt)")
                                 if(myClass=="polygonElem")el.setAttribute("onmousedown","editPolygonDraw("+id+",evt)")
-                                if(myClass=="pgonElem")
-                                {
-                                   InsertSymbolArray.push(el) //---create plant symbol Table---
+                                if(myClass=="symbolElem")el.setAttribute("onmousedown","editSymbolDraw("+id+",evt)")
 
-                                 el.setAttribute("onmousedown","editPgonStart("+id+",evt)")
-                                }
-                                if(myClass=="componentElem")
+                              if(myClass=="componentElem")
                                 {
                                     	var gz=el.getElementsByTagName("rect")
                 						var coverRect=gz[gz.length-1]
